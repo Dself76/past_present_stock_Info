@@ -1,0 +1,8 @@
+<!-- This is 'results_snippet.html' in your 'templates' directory -->
+{% if result %}
+<p>Total Return: ${{ result['total_return'] }}</p>
+<p>Interest Gained: ${{ result['interest_gained'] }}</p>
+<p>Original Investment: ${{ result['original_investment'] }}</p>
+{% else %}
+<p>No data available for the given input.</p>
+{% endif %}

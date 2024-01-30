@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stock and Crypto Data Analysis</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    function submitForm() {
+        $.ajax({
+            type: 'POST',
+            url: $('#dataForm').attr('action'),
+            data: $('#dataForm').serialize(),
+            success: function(data) {
+                // The response data (HTML snippet) is added to the #results div
+                $('#results').html(data);
+            },
+            error: function() {
+                // You can add error handling here
+                $('#results').html("<p>An error has occurred. Please try again.</p>");
+            }
+        });
+    }
+    </script>
+    <style>
+        body {
+        background-color: lightgreen;
+        .ticker-list {
+            background-color: lightblue;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            float: right;
+            width: 40%;
+            margin-right: 350px; /* Adjust the right margin to move it to the left */
+            margin-top: -150px; /* Adjust the top margin to move it up */
+        }
+        .ticker-list li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Stock Details</h1>
+    <form id="dataForm" action="/get_data" method="post">
+        <label for="tickerSymbol">Stock Symbol (e.g., 'AAPL'):</label><br>
+        <input type="text" id="tickerSymbol" name="tickerSymbol"><br>
+        <label for="startDate">Start Date (e.g., '01/01/2023'):</label><br>
+        <input type="text" id="startDate" name="startDate"><br>
+        <label for="endDate">End Date (e.g., '01/01/2023'):</label><br>
+        <input type="text" id="endDate" name="endDate"><br>
+        <label for="investmentAmount">Investment Amount ($):</label><br>
+        <input type="text" id="investmentAmount" name="investmentAmount"><br><br>
+        <input type="button" value="Get Data" onclick="submitForm()">
+    </form>
+
+    <!-- The results will be displayed in this div -->
+    <div id="results">
+        <!-- Results will be populated here by jQuery -->
+    </div>
+
+    <!-- Add a section for the ticker symbols -->
+    <div class="ticker-list">
+        <ul>
+            <li>AAPL</li>
+            <li>MSFT</li>
+            <li>AMZN</li>
+            <li>GOOGL</li>
+            <li>GOOG</li>
+            <li>FB</li>
+            <li>TSLA</li>
+            <li>BRK.A</li>
+            <li>BRK.B</li>
+            <li>JNJ</li>
+            <li>JPM</li>
+            <li>V</li>
+        </ul>
+    </div>
+</body>
+</html>
