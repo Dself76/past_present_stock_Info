@@ -12,11 +12,11 @@
             url: $('#dataForm').attr('action'),
             data: $('#dataForm').serialize(),
             success: function(data) {
-                // The response data (HTML snippet) is added to the #results div
+                // This should be(giving myself a headache, pick up here later or when i come back) response data (HTML snippet) is added to the #results div
                 $('#results').html(data);
             },
             error: function() {
-                // You can add error handling here
+                //  add error handling here when I get this app more complex, make sure to structure tests so as not confuse me or anyone looking at it...
                 $('#results').html("<p>An error has occurred. Please try again.</p>");
             }
         });
@@ -56,10 +56,10 @@
 
     <!-- The results will be displayed in this div -->
     <div id="results">
-        <!-- Results will be populated here by jQuery -->
+        <!-- Results will be populated here by jQuery, even if i get rid of jQuery this stil needs to be the area I want poplulated -->
     </div>
 
-    <!-- Add a section for the ticker symbols -->
+    <!-- Add a section for the ticker symbols, dont forget to swith to let user put in whatever they want once this is good to go and tested -->
     <div class="ticker-list">
         <ul>
             <li>AAPL</li>
