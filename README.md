@@ -1,1 +1,4 @@
 A basic project I have worked on to practice my coding.
+Using real historical data from Yahoo Finance, the application serves as a practical tool for analyzing financial scenarios based on past market performances. Users can input various parameters, such as the stock symbol, investment amount, and specific start and end dates, to simulate and evaluate the outcomes of different investment strategies. The tool calculates potential returns by considering the price fluctuations over the selected period, offering insights into how strategic choices might have influenced financial gains or losses.
+
+This application enables a systematic exploration of historical data, allowing users to assess the impact of market timing and choice of stocks on investment returns. It effectively illustrates the theoretical gains that could have been achieved under different market conditions, providing a solid basis for understanding market trends and investment decision-making processes.
